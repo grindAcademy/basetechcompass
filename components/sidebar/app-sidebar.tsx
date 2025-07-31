@@ -138,7 +138,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             >
               <Link href="/">
                 <Image src={Logo} alt="Logo" className="size-5" />
-                <span className="text-base font-semibold">Učilica</span>
+                <span className="text-base font-semibold">
+                  Technology Basics
+                </span>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
