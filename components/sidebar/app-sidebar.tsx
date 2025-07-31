@@ -3,16 +3,11 @@
 import * as React from "react";
 import {
   IconCamera,
-  IconChartBar,
   IconDashboard,
   IconFileAi,
   IconFileDescription,
-  IconFolder,
-  IconHelp,
   IconListDetails,
-  IconSearch,
   IconSettings,
-  IconUsers,
 } from "@tabler/icons-react";
 import Logo from "@/public/logo.png";
 
@@ -34,7 +29,7 @@ import Image from "next/image";
 const data = {
   navMain: [
     {
-      title: "Dashboard",
+      title: "Statistics",
       url: "/admin",
       icon: IconDashboard,
     },
@@ -42,22 +37,7 @@ const data = {
       title: "Courses",
       url: "/admin/courses",
       icon: IconListDetails,
-    },
-    {
-      title: "Analytics",
-      url: "#",
-      icon: IconChartBar,
-    },
-    {
-      title: "Projects",
-      url: "#",
-      icon: IconFolder,
-    },
-    {
-      title: "Team",
-      url: "#",
-      icon: IconUsers,
-    },
+    }
   ],
   navClouds: [
     {
@@ -112,17 +92,7 @@ const data = {
       title: "Settings",
       url: "#",
       icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "#",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
+    }
   ],
 };
 

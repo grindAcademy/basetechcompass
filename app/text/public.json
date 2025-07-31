@@ -1,30 +1,30 @@
 {
-  "badgeText": "Budućnost Online Edukacije",
-  "headline": "Podignite Svoje Iskustvo Učenja",
-  "description": "Otkrijte novi način učenja s našim modernim, interaktivnim sustavom za upravljanje učenjem. Pristupite visokokvalitetnim tečajevima bilo kada, bilo gdje.",
+  "badgeText": "Placeholder",
+  "headline": "Placeholder",
+  "description": "Placeholder",
   "buttons": {
-    "exploreCourses": "Istraži Tečajeve",
-    "signIn": "Prijavi se"
+    "exploreCourses": "Placeholder",
+    "signIn": "Placeholder"
   },
   "features": [
     {
-      "title": "Sveobuhvatni Tečajevi",
-      "description": "Pristupite širokom rasponu pažljivo odabranih tečajeva koje su osmislili stručnjaci iz industrije.",
+      "title": "Placeholder",
+      "description": "Placeholder",
       "icon": "📚"
     },
     {
-      "title": "Interaktivno Učenje",
-      "description": "Angažirajte se s interaktivnim sadržajem, kvizovima i zadacima kako biste poboljšali svoje iskustvo učenja.",
+      "title": "Placeholder",
+      "description": "Placeholder",
       "icon": "🎮"
     },
     {
-      "title": "Praćenje Napretka",
-      "description": "Pratite svoj napredak i postignuća s detaljnim analizama i personaliziranim nadzornim pločama.",
+      "title": "Placeholder",
+      "description": "Placeholder",
       "icon": "📊"
     },
     {
-      "title": "Podrška Zajednice",
-      "description": "Pridružite se živahnoj zajednici učenika i instruktora kako biste surađivali i dijelili znanje.",
+      "title": "Placeholder",
+      "description": "Placeholder",
       "icon": "👥"
     }
   ]
