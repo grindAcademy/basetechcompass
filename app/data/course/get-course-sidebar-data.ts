@@ -8,7 +8,7 @@ export async function getCourseSidebarData(slug: string) {
 
   const course = await prisma.course.findUnique({
     where: {
-      slug: slug,
+      slug: "Mastering-Technology-Basics",
     },
     select: {
       id: true,
@@ -35,6 +35,7 @@ export async function getCourseSidebarData(slug: string) {
               title: true,
               position: true,
               description: true,
+              slug: true,
               lessonProgress: {
                 where: {
                   userId: session.id,

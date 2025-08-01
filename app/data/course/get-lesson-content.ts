@@ -3,12 +3,12 @@ import { requireUser } from "../user/require-user";
 import { prisma } from "@/lib/db";
 import { notFound } from "next/navigation";
 
-export async function getLessonContent(lessonId: string) {
+export async function getLessonContent(lessonSlug: string) {
   const session = await requireUser();
 
   const lesson = await prisma.lesson.findUnique({
     where: {
-      id: lessonId,
+      slug: lessonSlug,
     },
     select: {
       id: true,

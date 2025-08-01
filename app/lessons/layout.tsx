@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
 import { getCourseSidebarData } from "@/app/data/course/get-course-sidebar-data";
-import { CourseSidebar } from "../dashboard/_components/CourseSidebar";
 import { SiteHeader } from "@/components/sidebar/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
+import { CourseSidebar } from "./_components/CourseSidebar";
 
 interface iAppProps {
   params: Promise<{ slug: string }>;

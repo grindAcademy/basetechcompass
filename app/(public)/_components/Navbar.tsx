@@ -72,8 +72,8 @@ export function Navbar() {
                 >
                   Login
                 </Link>
-                <Link href="/login" className={buttonVariants()}>
-                  Get Started
+                <Link href="/join" className={buttonVariants()}>
+                  Start learning now
                 </Link>
               </>
             )}

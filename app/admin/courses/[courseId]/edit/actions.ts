@@ -212,6 +212,17 @@ export async function createChapter(
   }
 }
 
+function generateSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/č/g, "c")
+    .replace(/ć/g, "c")
+    .replace(/š/g, "s")
+    .replace(/ž/g, "z")
+    .replace(/đ/g, "d")
+    .replace(/\s+/g, "-"); 
+}
+
 export async function createLesson(
   values: ChapterSchemaType
 ): Promise<ApiResponse> {
@@ -225,6 +236,8 @@ export async function createLesson(
         message: "Invalid Data",
       };
     }
+
+    const slug = generateSlug(result.data.name);
 
     await prisma.$transaction(async (tx) => {
       const maxPos = await tx.lesson.findFirst({
@@ -247,6 +260,7 @@ export async function createLesson(
           thumbnailKey: result.data.thumbnailKey,
           chapterId: result.data.chapterId,
           position: (maxPos?.position ?? 0) + 1,
+          slug,
         },
       });
     });

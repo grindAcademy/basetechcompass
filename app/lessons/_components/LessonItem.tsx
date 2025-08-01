@@ -9,6 +9,7 @@ interface iAppProps {
     title: string;
     position: number;
     description: string | null;
+    slug:string;
   };
   slug: string;
   isActive?: boolean;
@@ -18,7 +19,7 @@ interface iAppProps {
 export function LessonItem({ lesson, slug, isActive, completed }: iAppProps) {
   return (
     <Link
-      href={`/dashboard/${slug}/${lesson.id}`}
+      href={`/lessons/${lesson.slug}`}
       className={buttonVariants({
         variant: completed ? "secondary" : "outline",
         className: cn(

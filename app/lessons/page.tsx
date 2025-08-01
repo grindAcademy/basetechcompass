@@ -8,7 +8,7 @@ export default async function CourseSlugRoute() {
   const firstLesson = firstChapter?.lessons[0];
 
   if (firstLesson) {
-    redirect(`/lessons/${firstLesson.id}`);
+    redirect(`/lessons/${firstLesson.slug}`);
   }
   return (
     <div className="flex items-center justify-center h-full text-center">

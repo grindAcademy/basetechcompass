@@ -80,6 +80,7 @@ export const lessonSchema = z.object({
 
   videoKey: z.string().optional(),
   thumbnailKey: z.string().optional(),
+  slug: z.string().min(1, { message: "Slug must be provided" }).optional(), 
 });
 
 export type CourseSchemaType = z.infer<typeof courseSchema>;
