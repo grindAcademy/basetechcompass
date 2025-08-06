@@ -16,7 +16,7 @@ interface iAppProps {
   completed: boolean;
 }
 
-export function LessonItem({ lesson, slug, isActive, completed }: iAppProps) {
+export function LessonItem({ lesson, isActive, completed }: iAppProps) {
   return (
     <Link
       href={`/lessons/${lesson.slug}`}

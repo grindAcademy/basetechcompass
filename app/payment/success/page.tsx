@@ -29,11 +29,11 @@ export default function PaymentSuccessfull() {
             </p>
 
             <Link
-              href="/dashboard"
+              href="/lessons"
               className={buttonVariants({ className: "w-full mt-5" })}
             >
               <ArrowLeft className="size-4" />
-              Go to Dashboard
+              Go to Course
             </Link>
           </div>
         </CardContent>

@@ -72,7 +72,7 @@ export function Navbar() {
                 >
                   Login
                 </Link>
-                <Link href="/join" className={buttonVariants()}>
+                <Link href="/login" className={buttonVariants()}>
                   Start learning now
                 </Link>
               </>

@@ -7,13 +7,13 @@ import { enrollInCourseAction } from "../actions";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 
-export function EnrollmentButton({ courseId }: { courseId: string }) {
+export function EnrollmentButton() {
   const [pending, startTransition] = useTransition();
 
   function onSubmit() {
     startTransition(async () => {
       const { data: result, error } = await tryCatch(
-        enrollInCourseAction(courseId)
+        enrollInCourseAction()
       );
 
       if (error) {
@@ -30,7 +30,7 @@ export function EnrollmentButton({ courseId }: { courseId: string }) {
   }
 
   return (
-    <Button onClick={onSubmit} disabled={pending} className="w-full">
+    <Button onClick={onSubmit} disabled={pending}>
       {pending ? (
         <>
           <Loader2 className="size-4 animate-spin" />

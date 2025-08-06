@@ -1,8 +1,6 @@
 "use client";
 
-import { buttonVariants } from "@/components/ui/button";
 import textContent from "@/app/text/public.json";
-import Link from "next/link";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Card,
@@ -13,6 +11,7 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
+import { EnrollmentButton } from "../(public)/_components/EnrollmentButton";
 
 export default function Home() {
   const [email, setEmail] = useState("");
@@ -31,7 +30,7 @@ export default function Home() {
           <Tabs defaultValue="basic-info">
             <TabsList className="grid grid-cols-2 w-sm">
               <TabsTrigger value="basic-info">For myself</TabsTrigger>
-              <TabsTrigger value="course-structure">It's a gift</TabsTrigger>
+              <TabsTrigger value="course-structure">Its a gift</TabsTrigger>
             </TabsList>
             <TabsContent value="basic-info">
               <div className="grid gap-2">
@@ -49,7 +48,7 @@ export default function Home() {
               <Card>
                 <CardHeader>
                   <CardTitle>Razradi ovo</CardTitle>
-                  <CardTitle>It's easy</CardTitle>
+                  <CardTitle>Its easy</CardTitle>
                   <CardDescription>
                     1. You buy the course with your email address
                   </CardDescription>
@@ -76,16 +75,7 @@ export default function Home() {
             </TabsContent>
           </Tabs>
 
-          <div className="flex flex-col sm:flex-row gap-4 mt-8">
-            <Link
-              className={buttonVariants({
-                size: "lg",
-              })}
-              href="/courses"
-            >
-              Next step
-            </Link>
-          </div>
+          <EnrollmentButton />
         </div>
       </section>
     </>

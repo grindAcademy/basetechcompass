@@ -28,7 +28,7 @@ export function LoginForm() {
     startGoogleTransition(async () => {
       await authClient.signIn.social({
         provider: "google",
-        callbackURL: "/",
+        callbackURL: "/join",
         fetchOptions: {
           onSuccess: () => {
             toast.success("Singed in with Google, you will be redirected...");
