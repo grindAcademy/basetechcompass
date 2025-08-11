@@ -3,8 +3,9 @@ import { SiteHeader } from "@/components/sidebar/site-header";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/sidebar/app-sidebar";
 import { CourseSidebar } from "./_components/CourseSidebar";
+import { ReactNode } from "react";
 
-export default async function CourseLayout() {
+export default async function CourseLayout({ children }: { children: ReactNode }) {
   const course = await getCourseSidebarData();
 
   return (
