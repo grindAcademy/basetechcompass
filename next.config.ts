@@ -22,15 +22,15 @@ const nextConfig: NextConfig = {
     return config;
   },
 
-  async redirects() {
-    return [
-      {
-        source: "/",
-        destination: "/blog",
-        permanent: true,
-      },
-    ];
-  },
+  // async redirects() {
+  //   return [
+  //     {
+  //       source: "/",
+  //       destination: "/blog",
+  //       permanent: true,
+  //     },
+  //   ];
+  // },
 };
 
 export default nextConfig;

@@ -12,6 +12,7 @@ import { ThemeSwitch } from "@/components/ui/themeSwitch";
 const navigationItems = [
   { name: "Lessons", href: "/lessons" },
   { name: "Challenges", href: "/challenges" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export function Navbar() {

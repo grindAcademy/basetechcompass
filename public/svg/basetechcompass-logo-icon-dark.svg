@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>basetechcompass • compass icon (dark)</title>
+  <g fill="none" fill-rule="evenodd">
+    <!-- Outer ring -->
+    <circle cx="128" cy="128" r="104" stroke="#f84484" stroke-width="14"/>
+    <!-- Inner ring -->
+    <circle cx="128" cy="128" r="88" stroke="#e6edf5" stroke-width="6"/>
+    <!-- Compass star -->
+    <polygon points="128,36 148,128 128,220 108,128" fill="#2dd4bf"/>
+    <polygon points="220,128 128,148 36,128 128,108" fill="#94f0e6"/>
+    <!-- Needle -->
+    <polygon points="128,92 186,128 128,164 106,128" fill="#f84484"/>
+    <!-- Center dot -->
+    <circle cx="128" cy="128" r="7" fill="#e6edf5"/>
+  </g>
+</svg>
