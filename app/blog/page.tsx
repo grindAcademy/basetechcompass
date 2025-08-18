@@ -13,6 +13,8 @@ export default function Home() {
         headerStyle={1}
         footerStyle={3}
         headerCls="navbar-dark inner-page-header"
+        headTitle=""
+        breadcrumbTitle=""
       >
         <div>
           <section

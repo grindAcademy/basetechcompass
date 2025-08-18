@@ -21,6 +21,8 @@ export default function Home() {
         headerStyle={1}
         footerStyle={3}
         headerCls="navbar-dark light-hero-header"
+        headTitle=""
+        breadcrumbTitle=""
       >
         <Hero5 />
         <Statistic1_5 />

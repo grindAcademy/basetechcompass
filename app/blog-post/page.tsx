@@ -14,6 +14,8 @@ export default function Home() {
         headerStyle={1}
         footerStyle={3}
         headerCls="navbar-dark inner-page-header"
+        headTitle=""
+        breadcrumbTitle=""
       >
         <div>
           <section
@@ -267,8 +269,7 @@ export default function Home() {
                             <br />
                             <span className="pl-30">
                               <span className="code-variable">content</span>: [
-                              <span className="code-string">
-                              </span>
+                              <span className="code-string"></span>
                               ],
                             </span>
                             <br />
