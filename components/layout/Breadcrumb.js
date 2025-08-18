@@ -1,5 +1,5 @@
 
-export default function Breadcrumb({ breadcrumbTitle }) {
+export default function Breadcrumb() {
     return (
         <>
 

@@ -10,7 +10,7 @@ import {
   IconSearch,
   IconSettings,
 } from "@tabler/icons-react";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/images/logo-pink.png";
 
 import { NavMain } from "@/components/sidebar/nav-main";
 import { NavSecondary } from "@/components/sidebar/nav-secondary";

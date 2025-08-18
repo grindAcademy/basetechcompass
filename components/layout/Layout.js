@@ -18,74 +18,80 @@ export default function Layout({
   children,
   headerCls,
 }) {
-  const [scroll, setScroll] = useState(0);
+  const [scroll, setScroll] = useState(false);
   const [isMobileMenu, setMobileMenu] = useState(false);
 
   const handleMobileMenu = () => {
-    setMobileMenu(!isMobileMenu);
-    !isMobileMenu
-      ? document.body.classList.add("wsactive")
-      : document.body.classList.remove("wsactive");
+    const next = !isMobileMenu;
+    setMobileMenu(next);
+    // Fix 1: Avoid unused expression by using a real statement
+    document.body.classList.toggle("wsactive", next);
   };
 
+  // WOW.js initialization (client-only)
   useEffect(() => {
-    const WOW = require("wowjs");
+    let disposed = false;
 
-    // Initialize WOW.js for desktop
-    window.wowDesktop = new WOW.WOW({
-      boxClass: "wow",
-      animateClass: "animated",
-      offset: 0,
-      mobile: false, // Disable for desktop
-      live: true,
-    });
+    (async () => {
+      const mod = await import("wowjs");
+      const { WOW } = mod; // Fix 2 & 3: dynamic import instead of require()
 
-    // Initialize WOW.js for mobile
-    window.wowMobile = new WOW.WOW({
-      boxClass: "wow",
-      animateClass: "animated",
-      offset: 100,
-      mobile: true,
-      live: true,
-    });
+      if (disposed) return;
 
-    // Initializations
-    window.wowDesktop.init();
-    window.wowMobile.init();
+      // Initialize WOW.js for desktop
+      // Note: attaching to window only if you truly need global access elsewhere
+      window.wowDesktop = new WOW({
+        boxClass: "wow",
+        animateClass: "animated",
+        offset: 0,
+        mobile: false,
+        live: true,
+      });
 
-    // Scroll event listener
+      // Initialize WOW.js for mobile
+      window.wowMobile = new WOW({
+        boxClass: "wow",
+        animateClass: "animated",
+        offset: 100,
+        mobile: true,
+        live: true,
+      });
+
+      window.wowDesktop.init();
+      window.wowMobile.init();
+    })();
+
+    return () => {
+      disposed = true;
+    };
+  }, []);
+
+  // Re-sync WOW on mobile menu toggle (safer than re-init)
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.wowMobile &&
+      typeof window.wowMobile.sync === "function"
+    ) {
+      window.wowMobile.sync();
+    }
+  }, [isMobileMenu]);
+
+  // Scroll listener (stable)
+  useEffect(() => {
     const handleScroll = () => {
-      const scrollCheck = window.scrollY > 100;
-      if (scrollCheck !== scroll) {
-        setScroll(scrollCheck);
-      }
+      const scrolled = window.scrollY > 100;
+      setScroll((prev) => (prev !== scrolled ? scrolled : prev));
     };
 
-    document.addEventListener("scroll", handleScroll);
+    document.addEventListener("scroll", handleScroll, { passive: true });
+    // Run once to set initial state if the page loads scrolled
+    handleScroll();
 
-    // Cleanup function
     return () => {
       document.removeEventListener("scroll", handleScroll);
     };
-  }, [scroll]);
-
-  // Additional useEffect to handle mobile visibility issue
-  useEffect(() => {
-    // Ensure that WOW.js for mobile is re-initialized after a state change
-    window.wowMobile.init();
-  }, [isMobileMenu]);
-
-  useEffect(() => {
-    const WOW = require("wowjs");
-    window.wowMobile = new WOW.WOW({
-      boxClass: "wow",
-      animateClass: "animated",
-      offset: 100,
-      mobile: true,
-      live: true,
-    });
-    window.wowMobile.init();
-  }, [isMobileMenu]);
+  }, []);
 
   return (
     <>

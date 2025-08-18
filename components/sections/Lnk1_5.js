@@ -1,7 +1,6 @@
+import Tablet from "@/public/images/tablet-01.png";
+import Image from "next/image";
 
-
-import Link from "next/link"
-import VideoPopup from "../elements/VidepPopup"
 export default function Lnk1_5() {
     return (
         <>
@@ -27,9 +26,12 @@ export default function Lnk1_5() {
                                 <div className="col">
                                     <div className="bc-5-img bc-5-tablet img-block-hidden video-preview wow fadeInUp">
                                         {/* Play Icon */}
-                                        <VideoPopup style={1}/>
                                         {/* Preview Image */}
-                                        <img className="img-fluid" src="/images/tablet-01.png" alt="content-image" />
+                                                                <Image
+                                                                  src={Tablet}
+                                                                  alt="brand-logo"
+                                                                  className="img-fluid"
+                                                                />
                                     </div>
                                 </div>
                             </div>

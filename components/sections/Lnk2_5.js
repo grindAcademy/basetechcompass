@@ -1,4 +1,5 @@
-
+import Img from "@/public/images/img-07.png";
+import Image from "next/image";
 
 import Link from "next/link"
 export default function Lnk2_5() {
@@ -11,7 +12,11 @@ export default function Lnk2_5() {
                         {/* IMAGE BLOCK */}
                         <div className="col-md-6">
                             <div className="img-block left-column wow fadeInRight">
-                                <img className="img-fluid" src="/images/img-07.png" alt="content-image" />
+                                    <Image
+                                        src={Img}
+                                        alt="brand-logo"
+                                        className="img-fluid"
+                                    />
                             </div>
                         </div>
                         {/* TEXT BLOCK */}

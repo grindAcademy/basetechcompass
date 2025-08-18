@@ -1,4 +1,4 @@
-export default function Header2({ scroll, isMobileMenu, handleMobileMenu }) {
+export default function Header2() {
     return (
         <>
             Header2

@@ -1,56 +1,57 @@
-import { useEffect, useRef, useState } from 'react'
+"use client"
 
+import { useRef, useState, useMemo, useEffect } from "react";
 
 export default function Counter({ end, duration }) {
-    const [count, setCount] = useState(0)
-    const countRef = useRef(null)
-    const increment = end / duration
+  const [count, setCount] = useState(0);
+  const countRef = useRef(null);
+  const increment = useMemo(() => end / duration, [end, duration]);
 
-    useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    startCount()
-                    observer.disconnect()
-                }
-            },
-            { threshold: 0 }
-        )
-
-        if (countRef.current) {
-            observer.observe(countRef.current)
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startCount();
+          observer.disconnect();
         }
+      },
+      { threshold: 0 }
+    );
 
-        return () => {
-            observer.disconnect()
-        }
-    }, [])
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCount((prevCount) => {
-                const newCount = prevCount + increment
-                if (newCount >= end) {
-                    clearInterval(interval)
-                    return end
-                } else {
-                    return newCount
-                }
-            })
-        }, 1000 / duration)
-
-        return () => {
-            clearInterval(interval)
-        }
-    }, [end, increment])
-
-    const startCount = () => {
-        setCount(0)
+    if (countRef.current) {
+      observer.observe(countRef.current);
     }
 
-    return (
-        <span ref={countRef}>
-            <span>{Math.round(count)}</span>
-        </span>
-    )
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCount((prevCount) => {
+        const newCount = prevCount + increment;
+        if (newCount >= end) {
+          clearInterval(interval);
+          return end;
+        } else {
+          return newCount;
+        }
+      });
+    }, 1000 / duration);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, [end, increment, duration]); // now safe
+
+  const startCount = () => {
+    setCount(0);
+  };
+
+  return (
+    <span ref={countRef}>
+      <span>{Math.round(count)}</span>
+    </span>
+  );
 }
