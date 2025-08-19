@@ -3,7 +3,6 @@ import Menu from "../Menu"
 import MobileMenu from "../MobileMenu"
 import LogoPink from "@/public/images/logo-pink.png";
 import LogoWhite from "@/public/images/logo-white.png";
-import LogoPinkWhite from "@/public/images/logo-pink-white.png";
 import Image from "next/image";
 
 
@@ -38,7 +37,6 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, header
                 <div className="desktoplogo">
                   <Link href="#hero-1" className="logo-black">
                     <Image src={LogoPink} alt="brand-logo" />
-                    <Image src={LogoPinkWhite} alt="brand-logo" />
                   </Link>
                 </div>
                 {/* HEADER WHITE LOGO */}

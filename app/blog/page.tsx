@@ -40,27 +40,24 @@ export default function Home() {
                     <div className="blog-post-txt">
                       {/* Post Tag */}
                       <span className="post-tag color--blue-400">
-                        Social Media Marketing
+                        Technology
                       </span>
                       {/* Post Link */}
-                      <h3 className="s-38 w-700">
-                        <Link href="/blog-post">
-                          Congue magna tempor and ipsum Martex sapien turpis
-                          laoreet augue
-                        </Link>
+                      <h3 className="s-38">
+                        <Link href="/blog-post">What Is the Cloud?</Link>
                       </h3>
                       {/* Text */}
                       <p>
-                        Aliqum mullam blandit vitae and tempor sapien and donec
-                        lipsum gravida porta undo velna dolor libero a risus
-                        aliquet tempus posuere a tempor velna tempus posuere
-                        dolor
+                        Picture this: you’re taking photos on your phone at a
+                        birthday party. A few seconds later, those same pictures
+                        appear on your tablet at home and on your laptop at
+                        work.
                       </p>
                       {/* Post Meta */}
                       <div className="blog-post-meta mt-30">
                         <ul className="post-meta-list ico-10">
                           <li>
-                            <p className="w-500">By Martex Team</p>
+                            <p className="font-bold">By Ivan Maric</p>
                           </li>
                           <li className="meta-list-divider">
                             <p>
@@ -68,7 +65,7 @@ export default function Home() {
                             </p>
                           </li>
                           <li>
-                            <p>Apr 28, 2023</p>
+                            <p>Aug 18, 2025</p>
                           </li>
                         </ul>
                       </div>
